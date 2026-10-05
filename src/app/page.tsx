@@ -17,7 +17,10 @@ export default async function Home() {
   return (
     <main className="container">
       <header className="header">
-        <h1>BVYS - Bütünleşik Vakıf Yönetim Sistemi</h1>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <img src="/logo.jpg" alt="BVYS Logo" width={48} height={48} style={{ borderRadius: '50%', objectFit: 'cover' }} />
+          <h1>BVYS - Bütünleşik Vakıf Yönetim Sistemi</h1>
+        </div>
         <div>
           {isAuthenticated ? (
             <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>

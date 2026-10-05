@@ -20,7 +20,10 @@ export default async function Settings() {
   return (
     <main className="container">
       <header className="header">
-        <h1>Sistem Ayarları</h1>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <img src="/logo.jpg" alt="BVYS Logo" width={48} height={48} style={{ borderRadius: '50%', objectFit: 'cover' }} />
+          <h1>Sistem Ayarları</h1>
+        </div>
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
           <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
             Admin: {session.user.email}
