@@ -3,6 +3,7 @@ import { getLinks, addLink, deleteLink } from '../actions'
 import { getServerSession } from 'next-auth/next'
 import { authOptions } from '../api/auth/[...nextauth]/options'
 import { redirect } from 'next/navigation'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 export const dynamic = 'force-dynamic'
 
@@ -27,6 +28,7 @@ export default async function Settings() {
           <Link href="/" className="btn">
             ← Panele Dön
           </Link>
+          <ThemeToggle />
         </div>
       </header>
 

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { getLinks } from './actions'
 import { getServerSession } from 'next-auth/next'
 import { authOptions } from './api/auth/[...nextauth]/options'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 export const dynamic = 'force-dynamic'
 
@@ -31,11 +32,15 @@ export default async function Home() {
               <Link href="/api/auth/signout" className="btn">
                 Çıkış Yap
               </Link>
+              <ThemeToggle />
             </div>
           ) : (
-             <Link href="/api/auth/signin" className="btn btn-primary">
-              Sisteme Giriş Yap
-            </Link>
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+              <Link href="/api/auth/signin" className="btn btn-primary">
+                Sisteme Giriş Yap
+              </Link>
+              <ThemeToggle />
+            </div>
           )}
         </div>
       </header>

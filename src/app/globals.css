@@ -1,6 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
+  --bg-color: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  --accent-glow: rgba(99, 102, 241, 0.15);
+  --heading-gradient: linear-gradient(to right, #1e293b, #64748b);
+  --btn-bg: rgba(0, 0, 0, 0.05);
+  --btn-hover: rgba(0, 0, 0, 0.1);
+  --btn-text: #0f172a;
+  --card-icon-bg: rgba(0, 0, 0, 0.03);
+  --input-bg: rgba(255, 255, 255, 0.8);
+  --input-border: rgba(0, 0, 0, 0.1);
+  --list-item-bg: rgba(255, 255, 255, 0.5);
+  --list-item-hover: rgba(255, 255, 255, 0.8);
+  --list-item-border: rgba(0, 0, 0, 0.05);
+}
+
+.dark {
   --bg-color: #0f172a;
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
@@ -8,6 +28,16 @@
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   --accent-glow: rgba(99, 102, 241, 0.2);
+  --heading-gradient: linear-gradient(to right, #fff, #94a3b8);
+  --btn-bg: rgba(255, 255, 255, 0.1);
+  --btn-hover: rgba(255, 255, 255, 0.15);
+  --btn-text: #fff;
+  --card-icon-bg: rgba(255, 255, 255, 0.05);
+  --input-bg: rgba(0, 0, 0, 0.2);
+  --input-border: var(--glass-border);
+  --list-item-bg: rgba(0, 0, 0, 0.15);
+  --list-item-hover: rgba(0, 0, 0, 0.25);
+  --list-item-border: var(--glass-border);
 }
 
 * {
@@ -82,7 +112,7 @@ a {
 .header h1 {
   font-size: 1.5rem;
   font-weight: 600;
-  background: linear-gradient(to right, #fff, #94a3b8);
+  background: var(--heading-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -97,18 +127,19 @@ a {
   cursor: pointer;
   transition: all 0.3s ease;
   border: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: var(--btn-bg);
+  color: var(--btn-text);
   border: 1px solid var(--glass-border);
 }
 
 .btn:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--btn-hover);
   transform: translateY(-2px);
 }
 
 .btn-primary {
   background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #fff;
   border: none;
 }
 
@@ -186,8 +217,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--card-color, #fff);
+  background: var(--card-icon-bg);
+  color: var(--card-color, var(--text-primary));
   font-size: 1.5rem;
   font-weight: 700;
   border: 1px solid var(--glass-border);
@@ -196,7 +227,7 @@ a {
 .card-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .card-desc {
@@ -250,10 +281,10 @@ a {
 .form-control {
   width: 100%;
   padding: 0.875rem 1rem;
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--glass-border);
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
   border-radius: 8px;
-  color: #fff;
+  color: var(--text-primary);
   font-family: inherit;
   font-size: 1rem;
   transition: all 0.3s;
@@ -282,15 +313,15 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem;
-  background: rgba(0, 0, 0, 0.15);
-  border: 1px solid var(--glass-border);
+  background: var(--list-item-bg);
+  border: 1px solid var(--list-item-border);
   border-radius: 12px;
   transition: all 0.3s;
 }
 
 .list-item:hover {
-  background: rgba(0, 0, 0, 0.25);
-  border-color: rgba(255, 255, 255, 0.15);
+  background: var(--list-item-hover);
+  border-color: var(--glass-border);
 }
 
 .list-item-info {
